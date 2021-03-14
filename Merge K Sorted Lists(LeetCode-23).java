@@ -12,14 +12,15 @@ class Solution {
     public ListNode mergeKLists(ListNode[] lists) {
       PriorityQueue<ListNode> pq = new PriorityQueue<ListNode>(new Comparator<ListNode>(){
         @Override
-        public int compare(LisNode l1, ListNode l2){
+        public int compare(ListNode l1, ListNode l2){
           return l1.val-l2.val;
         }
       });
       
       ListNode head = new ListNode(0);
       for(ListNode list : lists){
-        pq.add(list);
+          if(list!=null)
+            pq.add(list);
       }
       
       ListNode tail = head;
