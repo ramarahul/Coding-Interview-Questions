@@ -5,8 +5,8 @@ class Solution{
     for(int i=0;i<s.length();i++){
       String s1 = extend(s,i,i);
       String s2 = extend(s,i,i+1);
-      max = s1.length() > max.length ? s1 : max;
-      max = s2.length() > max.length ? s2 : max;
+      max = s1.length() > max.length() ? s1 : max;
+      max = s2.length() > max.length() ? s2 : max;
     }
     
     return max;
