@@ -5,9 +5,11 @@ class Solution {
       int start = 0;
       int end = matrix.length -1;
       while(start<end){
-        int[] temp = matrix[start];
-        matix[start] = matrix[end];
-        matrix[end] = temp;
+         int[] temp = matrix[start];
+         matrix[start] = matrix[end];
+         matrix[end] = temp;
+         start++;
+         end--;
       }
       
       //Then transpose the matrix or in other words flip it diagonally
@@ -15,7 +17,7 @@ class Solution {
         for(int j=i+1;j<matrix[i].length;j++){
           int temp = matrix[i][j];
           matrix[i][j] = matrix[j][i];
-          matrix[j][i] = matrix[i][j];
+          matrix[j][i] = temp;
         }
       }
         
